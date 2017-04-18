@@ -1,0 +1,16 @@
+import socket
+s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+ip_port=('0.0.0.0',9998)
+s.bind(ip_port)
+s.listen(5)
+while True:
+    print('plz wait...')
+    n,addr=s.accept()
+    print('Got a new connection from',addr)
+    n.send('hello'.encode())
+    while True:
+        data=n.recv(1024).decode()
+        print('from client:'+data)
+        
+        n.send("reced".encode())
+    n.close()
