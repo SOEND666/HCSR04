@@ -1,0 +1,19 @@
+import socket
+s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+ip_port=('192.168.1.120',9998)
+s.connect(ip_port)
+    
+data=s.recv(1024).decode()
+
+def sen(w):
+    
+    inp = w
+    s.send(str(inp).encode())
+    #print('getinfo:'+data)
+    
+if __name__ == '__main__':
+    
+    while True:
+        
+        sen(w)
+    
