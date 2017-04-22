@@ -1,6 +1,8 @@
 import socket
+#: 将这个程序改写成一个函数，这样代码具有重复利用的可能性。
 s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 ip_port=('0.0.0.0',9998)
+#: socket有可能连接失败，需要添加一个异常处理
 s.bind(ip_port)
 s.listen(5)
 while True:
